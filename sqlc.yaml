@@ -1,0 +1,24 @@
+# version: "2"
+# project:
+#     id: ""
+# cloud:
+#     organization: ""
+#     project: ""
+#     hostname: ""
+# sql: []
+# overrides:
+#     go: null
+# plugins: []
+# rules: []
+
+version: "1"
+packages:
+  - name: "db"
+    path: "./db/sqlc"
+    queries: "./db/query/"
+    schema: "./db/migration/"
+    engine: "postgresql"
+    emit_json_tags: true
+    emit_prepared_queries: true
+    emit_interface: false
+    emit_exact_table_names: false

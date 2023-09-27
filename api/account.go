@@ -116,3 +116,30 @@ func (server *Server) deleteAccount(ctx *gin.Context) {
 	// Return the fetched account details as the account has been successfully deleted
 	ctx.JSON(http.StatusOK, account)
 }
+
+type addAccountBalanceRequest struct {
+	Amount int64 `json:"amount" binding:"required"`
+	ID     int64 `json:"id" binding:"required,min=1"`
+}
+
+func (server *Server) addAccountBalance(ctx *gin.Context) {
+	var req addAccountBalanceRequest
+
+	if err := ctx.ShouldBindJSON(&req); err != nil {
+		ctx.JSON(http.StatusBadRequest, errorResponse(err))
+		return
+	}
+
+	arg := db.AddAccountBalanceParams{
+		Amount: req.Amount,
+		ID:     req.ID,
+	}
+
+	account, err := server.store.AddAccountBalance(ctx, arg)
+	if err != nil {
+		ctx.JSON(http.StatusInternalServerError, errorResponse(err))
+		return
+	}
+
+	ctx.JSON(http.StatusOK, account)
+}

@@ -23,7 +23,9 @@ jobs:
             --health-cmd pg_isready
             --health-interval 10s
             --health-timeout 5s
-
+          ports:
+            - 5432:5432
+            
     steps:
     - name: Set up Go
       uses: actions/setup-go@v4

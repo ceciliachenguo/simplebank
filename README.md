@@ -19,7 +19,7 @@ This project incorporates a diverse set of technologies and concepts essential f
 - **Web Framework**: Gin
 - **API Documentation**: Swagger
 - **Database Design and Interaction**: DBML, SQL, Database Isolation Levels
-- **Security and Authentication**: JWT, PASETO, HTTPS, TLS, Encrypt
+- **Security and Authentication**: JWT, PASETO, HTTPS, TLS, Let's Encrypt
 - **Containerization and Orchestration**: Docker, Kubernetes
 - **Cloud Computing**: AWS, EKS
 - **Continuous Integration/Deployment**: GitHub Actions

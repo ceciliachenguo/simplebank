@@ -1,4 +1,4 @@
-<h1 align="center"> Welcome to Simple Bank!  </h1>
+<h1 align="center"> Welcome to Simple Bank!   </h1>
 
 > 😋  This repository hosts my Backend Project for A Simple Bank, a Golang-based web service to create and manage money transfers between available accounts.  😋
 
